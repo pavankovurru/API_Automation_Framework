@@ -95,7 +95,36 @@ log.info("RESPONSE:" + response.asString());
   - response.then().body("data.customers.flatten().any {it.containsKey('name') }", is(true)); --  every element in data.customers array has key 'name'
   ````
   
-  6.DATA BASE VALIDATIONS
+  6.FORM DATA
+   
+  When sending larger amount of data to the server it's common to use the multipart form data technique. Rest Assured provide methods called multiPart that allows you to specify a file, byte-array, input stream or text to upload. In its simplest form you can upload a file like this:
+  
+  ```given().
+          multiPart(new File("/path/to/file")).
+          post("/upload");
+   ```
+  
+  The control name in this case is the name of the input tag with name "file". If you have a different control name then you need to specify it:
+  
+  ```given().
+          multiPart("controlName", new File("/path/to/file")).
+          post("/upload");
+   ```
+  
+  It's also possible to supply multiple "multi-parts" entities in the same request:
+  
+  ```
+  given().
+          multiPart("controlName1", new File("/path/to/file")).
+          multiPart("controlName2", "my_file_name.txt", someData).
+          multiPart("controlName3", someJavaObject, "application/json").
+  when().
+          post("/upload");
+   ```
+  
+  
+  
+  7.DATA BASE VALIDATIONS
   
   `dbResult.clear();  -- do this before every db connection to make sure that past data is removed from the arraylist dbResult.`
 ```
