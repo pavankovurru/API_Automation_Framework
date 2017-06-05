@@ -95,7 +95,7 @@ log.info("RESPONSE:" + response.asString());
   - response.then().body("data.customers.flatten().any {it.containsKey('name') }", is(true)); --  every element in data.customers array has key 'name'
   ````
   
-  6.FORM DATA
+  6.FORM Data
    
   When sending larger amount of data to the server it's common to use the multipart form data technique. Rest Assured provide methods called multiPart that allows you to specify a file, byte-array, input stream or text to upload. In its simplest form you can upload a file like this:
   
