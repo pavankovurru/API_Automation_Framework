@@ -75,6 +75,14 @@ log.info("RESPONSE:" + response.asString());
   - Assert.assertEquals(response.then().extract().path("default").toString(),"false");
   - Assert.assertTrue(response.then().extract().path("name.text").toString().matches(".*?Test.*"));
   - Assert.assertTrue(response.then().extract().path("name.slot").toString().matches(".*?1.*"));
+  
+  
+  NOTE : to validate a float value use  is(12345f) instead of  is(12345) since the later would assume that user 
+  is trying to validate a double value 
+  
+  Matching a prefix
+  - response.then().body("data.startDate", startsWith(startDate));
+
 
  ````
  
