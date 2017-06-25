@@ -89,6 +89,8 @@ log.info("RESPONSE:" + response.asString());
  
   ##### ARRAY VALIDATIONS
  ````
+  - response.then().body("data.Ids", containsInAnyOrder(1,10,100,200,1000));  //array has values
+  - response.then().body("data.deviceIds", is(empty()));    //empty array
   - response.then().body("flatten().any{it.containsKey('id')}",is(true));
   - response.then().extract().jsonPath().getList("data.size").size();  -- size of an array 
   
