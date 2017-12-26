@@ -1,7 +1,12 @@
  # API AUTOMATION 
  
  This project uses REST ASSURED (Java DSL) to query an endpoint, Validate ResponseCode and to validate JSON payload.
- MySQL JDBC driver is then used to connect and query the database to validate accuracy of the API response. 
+ MySQL JDBC driver is then used to connect and query the database to validate accuracy of the API response.
+ 
+ `SshUtlities` - will use jsch java library to multi hop into server via jump server, executes shell command and returns response.  
+ 
+ `AeroSpikeUtility` - will return areospike result based on the unique key provided to it  
+ 
  
  ## FRAME WORK STACK 
  ```
