@@ -46,11 +46,9 @@ public class JSON_Utilities {
     //            "messages":["msg 1","msg 2","msg 3"]
     //    }
 
-
+    //    JSONParser parser = new JSONParser();
     //    Object obj = parser.parse(new FileReader("JSON FILE PATH"));
-    //
     //    JSONObject jsonObject = (JSONObject) obj;
-    //            System.out.println(jsonObject);   //prints json object
 
     //    String name = (String) jsonObject.get("name");
     //    long age = (Long) jsonObject.get("age");
@@ -61,40 +59,52 @@ public class JSON_Utilities {
     //        System.out.println(iterator.next());
     //    }
 
+    //  ************  WRITE TO JSON EXAMPLES -- JSON SIMPLE   ************  //
 
-    //  ************  WRITE TO JSON EXAMPLES -- gson jsonWriter   ************  //
+    //import org.json.simple.JSONArray;
+    //import org.json.simple.JSONObject;
+    //import java.io.FileWriter;
+    //import java.io.IOException;
 
-//import com.google.gson.stream.JsonWriter;
+    //    JSONObject obj = new JSONObject();
+    //        obj.put("name", "mkyong.com");
+    //        obj.put("age", new Integer(100));
 
-//    JsonWriter writer;
-//     try {
-//        writer = new JsonWriter(new FileWriter("c:\\user.json"));
-//
-//        writer.beginObject(); // {
-//        writer.name("name").value("pavan"); // "name" : "pavan"
-//        writer.name("age").value(29); // "age" : 29
-//
-//        writer.name("messages"); // "messages" :
-//        writer.beginArray(); // [
-//        writer.value("msg 1"); // "msg 1"
-//        writer.value("msg 2"); // "msg 2"
-//        writer.value("msg 3"); // "msg 3"
-//        writer.endArray(); // ]
-//
-//        writer.endObject(); // }
-//        writer.close();
-//
-//        System.out.println("Done");
-//
-//    } catch (IOException e) {
-//        e.printStackTrace();
-//    }
+    //    JSONArray list = new JSONArray();
+    //        list.add("msg 1");
+    //        list.add("msg 2");
+    //        list.add("msg 3");
+    //        obj.put("messages", list);
+
+    //      FileWriter file = new FileWriter("f:\\test.json")
+    //        file.write(obj.toJSONString());
+    //        file.flush();
+    //        System.out.print(obj);
 
 
+    //    Output
+    //
+    //    f:\\test.json
+    //    {
+    //        "age":100,
+    //            "name":"mkyong.com",
+    //            "messages":["msg 1","msg 2","msg 3"]
+    //    }
 
 
+    //  ************  UPDATE EXISTING JSON  -- JSON SIMPLE   ************  //
 
 
+    //    JSONParser parser = new JSONParser();
+    //    Object obj = parser.parse(new FileReader("JSON FILE PATH"));
+    //    JSONObject json = (JSONObject) obj;
+    //
+    //
+    //        json.put("startDate", ""+date);
+    //        json.put("endDate", date);
+    //        json.put("campaignName", "campaign"+random);
+    //        json.put("notificationTitle", "title"+random);
+    //        json.put("notificationMessage", "message"+random);
 
 
 }
