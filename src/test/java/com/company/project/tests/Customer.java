@@ -11,10 +11,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import java.text.Format;
-import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Date;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
@@ -31,25 +29,29 @@ public class Customer {
 
     private static String randomvalue;
     private static String customerID;
+    private static String serviceEndPoint;
+    private static String auth;
+    private static String customerRequestEndPoint;
 
     private ArrayList<String> dbResult = new ArrayList<>();   //this arraylist stores DB query result
 
 
     @BeforeClass(alwaysRun = true)
-    @Parameters({"serviceEndPoint"})
+    @Parameters({"serviceEndPoint", "auth", "customerRequestEndPoint"})
     public void preTestSteps(String serviceEndPoint) {
-        Date date = new Date();
-        Format dateformat = new SimpleDateFormat("yyyyMMddHHmmss");
-        randomvalue = "Test" + dateformat.format(date);
-    }
 
+        //Initializing data
+    this.serviceEndPoint=serviceEndPoint;
+    this.auth=auth;
+    this.customerRequestEndPoint=customerRequestEndPoint;
+    randomvalue = String.valueOf(Instant.now().getEpochSecond());
+
+    }
 
     //  **** CREATING A CUSTOMER **** //
 
     @Test(priority = 1)
-    @Parameters({"serviceEndPoint", "auth", "customerRequestEndPoint"})
-    public void verify_CreateCustomer(
-            String serviceEndPoint, String auth, String customerRequestEndPoint) {
+    public void verify_CreateCustomer() {
 
         //Request Details
         String requestURL = serviceEndPoint + customerRequestEndPoint;
@@ -112,7 +114,7 @@ public class Customer {
         String requestBody =
                 JSON_Utilities.jsonToString(
                         System.getProperty("user.dir")
-                                + "/src/main/java/com/company/project/json/customer.json")
+                                + "/src/main/java/com/company/project/jsonFiles/customer.json")
                         .replaceAll("nameToBeChanged", randomvalue);
 
         //Printing Request Details
