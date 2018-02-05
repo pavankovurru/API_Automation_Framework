@@ -1,4 +1,4 @@
-package com.company.project.Utilities;
+package com.company.project.utilities;
 
 import com.aerospike.client.AerospikeClient;
 import com.aerospike.client.Key;

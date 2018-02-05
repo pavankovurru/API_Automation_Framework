@@ -1,4 +1,4 @@
-package com.company.project.Utilities;
+package com.company.project.utilities;
 
 import com.jcraft.jsch.*;
 import org.apache.logging.log4j.LogManager;
@@ -91,7 +91,7 @@ public class SshUtilities {
       Channel channel1 = jumpServerSession.openChannel("sftp");
       channel1.connect();
       ChannelSftp sftpChannel = (ChannelSftp) channel1;
-      //getting contents of pen file from server
+      // getting contents of pen file from server
       InputStream pem = sftpChannel.get("permissions.pem");
 
       String result =
@@ -157,9 +157,7 @@ public class SshUtilities {
     // LogInToServerExecuteShellCommandAndReturnResponse(serviceEndPoint, "sed -i
     // 's/\\(Logger.*name=\\\"co.*=\\\"\\).*\\(\\\"\\)/\\1" + loggerLevel + "\\2/' " + log4j2Path);
 
-    logInToServerExecuteShellCommandAndReturnResponse(
-        serviceEndPoint,
-        "shell command");
+    logInToServerExecuteShellCommandAndReturnResponse(serviceEndPoint, "shell command");
     LOG.info("Updated Logger level to - " + loggerLevel);
   }
 

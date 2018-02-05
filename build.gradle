@@ -32,14 +32,14 @@ test {
 }
 
 
-task runOnStage(type: Test){
+task runOnStage(type: Test) {
     useTestNG() {
         testLogging.showStandardStreams = true
         suites 'src/test/resources/testNG_StageEnv.xml'
     }
 }
 
-task runOnDev(type: Test){
+task runOnDev(type: Test) {
     useTestNG() {
         testLogging.showStandardStreams = true
         suites 'src/test/resources/testNG_DevEnv.xml'

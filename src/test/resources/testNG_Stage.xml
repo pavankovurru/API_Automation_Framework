@@ -2,16 +2,16 @@
 
 <suite name="API TEST SUITE">
 
-	<!--UPDATE THESE TWO PARAMETERS-->
-	<parameter name="serviceEndPoint" value="" />
-	<parameter name="auth" value="" />
+    <!--UPDATE THESE TWO PARAMETERS-->
+    <parameter name="serviceEndPoint" value=""/>
+    <parameter name="auth" value=""/>
 
 
-	<test name=" API TESTS " >
-	<parameter name="customerRequestEndPoint" value="/api/customer" />
-	<classes>
-		<class name="com.company.project.tests.Customer"/>
-	</classes>
+    <test name=" API TESTS ">
+        <parameter name="customerRequestEndPoint" value="/api/customer"/>
+        <classes>
+            <class name="com.company.project.tests.Customer"/>
+        </classes>
     </test>
 
 </suite>
