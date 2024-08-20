@@ -10,12 +10,12 @@
  
  ## FRAME WORK STACK 
  ```
- 1. REST ASSURED 3.0.0
+ 1. REST ASSURED 5.5.0
  2. JSON-SIMPLE 
  3. JDBC MYSQL DRIVER
- 4. LOG4J 2  
- 5. TestNG 6.9  
- 6. GRADLE
+ 4. LOG4J 2.23.1  
+ 5. TestNG 7.10.2  
+ 6. Gradle 8.5
  ```
  
  ## DATA 
